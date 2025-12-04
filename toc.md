@@ -25,21 +25,7 @@
 
 ## 第 II 部分 语法与语言核心（逐步掌握）
 
-1. 第 3 章 语法总览（对应：`3.mbt.md` 综述）
-
-   - 3.1 术语卡：表达式/语句/字面量/绑定/类型
-   - 3.2 MoonBit 以表达式为中心的风格
-   - 小练习：边看边敲、验证输出
-
-2. 第 4 章 函数与程序结构（从入门到规范）
-
-   - 函数定义与调用：`fn`、`main`、`init`
-   - 参数与返回值、类型注解
-   - 带标签参数、可选参数与默认值
-   - 局部函数、匿名函数、箭头函数
-   - 练习：`greet`、`add`、带标签/可选参数示例
-
-3. 第 5 章 数据类型（系统化）
+1. 第 3 章 数据类型（对应：`3.types.mbt.md`）
 
    - Unit / Bool / 数字类型（Int/Int64/UInt/Float/Double）
    - 字符串与插值、多行字符串
@@ -47,50 +33,66 @@
    - 元组 / 数组（Array 与 FixedArray）、索引与解构
    - 练习：字面量与类型转换综合题
 
-4. 第 6 章 变量、常量与作用域（安全与风格）
+2. 第 4 章 函数与程序结构（从入门到规范）（对应：`4.functions.mbt.md`）
+
+   - 函数定义与调用：`fn`、`main`、`init`
+   - 参数与返回值、类型注解
+   - 带标签参数、可选参数与默认值
+   - 局部函数、匿名函数、箭头函数
+   - 练习：`greet`、`add`、带标签/可选参数示例
+
+3. 第 5 章 变量、常量与作用域（对应：`5.variables.mbt.md`）
 
    - `let`（默认不可变）与 `mut`
    - `const` 编译期常量
    - 作用域、生命周期与命名
    - 练习：修复不可变/可变绑定错误
 
-5. 第 7 章 控制流（写清楚逻辑）
-   - if/else 作为表达式
-   - match（模式匹配）
-   - 循环：while、for（C 风格）、for..in、范围
-   - 练习：`grade(score)`、`sum(arr)`、带索引遍历
+4. 第 6 章 控制流（对应：`6.control-flow.mbt.md`）
 
-## 第 III 部分 高级特性与项目实战
+   - `let`（默认不可变）与 `mut`
+   - `const` 编译期常量
+   - 作用域、生命周期与命名
+   - 练习：修复不可变/可变绑定错误
 
-1. 第 8 章 函数进阶（闭包/高阶函数/递归）
+5. 第 7 章 函数进阶（闭包/高阶函数/递归）
 
    - 匿名函数与闭包（捕获环境）
    - 高阶函数（map/filter/reduce）
    - 递归与 `letrec`（相互递归）
    - 练习：`create_counter`、`apply_twice`、尾递归改写
 
-2. 第 9 章 数据结构与标准库（实用工具）
+## 第 III 部分 高级特性与项目实战
+
+1. 第 8 章 数据结构与标准库（实用工具）
+
+   - 匿名函数与闭包（捕获环境）
+   - 高阶函数（map/filter/reduce）
+   - 递归与 `letrec`（相互递归）
+   - 练习：`create_counter`、`apply_twice`、尾递归改写
+
+2. 第 9 章 模块、包与依赖管理（工程化）
 
    - 常用容器与操作（视标准库支持补充）
    - 字符串/字节/IO
    - JSON/序列化/时间日期（如适用）
    - 练习：文件词频统计并输出 JSON
 
-3. 第 10 章 模块、包与依赖管理（工程化）
+3. 第 10 章 测试与调试
 
    - `moon.mod.json` 与包结构
    - 依赖声明与发布
    - 多模块工程（lib/main 分离）
    - 练习：抽取功能为库包并在另一项目引用
 
-4. 第 11 章 测试与调试
+4. 第 11 章 构建、部署与目标平台
 
    - 单元测试（`*_test.mbt`）
    - 调试方法（断点/日志）
    - 常见错误与排查（类型错误、未初始化等）
    - 练习：为既有库补齐单测并通过
 
-5. 第 12 章 构建、部署与目标平台
+5. 第 12 章 并发与异步（如语言/运行时支持）
    - 使用 `moon` 构建/运行/发布
    - 目标后端：Wasm、C、LLVM、JS 简介
    - 在浏览器/服务器/边缘设备运行示例
@@ -98,12 +100,12 @@
 
 ## 第 IV 部分 进阶专题（选读）
 
-1. 第 13 章 并发与异步（如语言/运行时支持）
+1. 第 13 章 性能与内存
 
    - 线程/异步 API、通信与并发数据结构
    - 练习：并发任务示例或调度器
 
-2. 第 14 章 性能与内存
+2. 第 14 章 （预留扩展章节）
    - 性能剖析与优化思路
    - 内存/对象生命周期与 GC（如适用）
    - 练习：优化慢函数并给出对比
@@ -120,5 +122,5 @@
 
 说明：
 
-- 已有内容：`1.md`、`2.mbt.md`、`3.mbt.md` 可直接映射到第 1–3 章；第 3 章后续将内容拆分、细化到第 4–7 章。
-- 新增章节建议以独立文件存放，例如：`4.functions.mbt.md`、`5.types.mbt.md`、`6.variables.mbt.md`、`7.control-flow.mbt.md`、`8.advanced-functions.mbt.md`、`9.stdlib-data.mbt.md`、`10.modules-packages.mbt.md`、`11.testing-debug.mbt.md`、`12.build-deploy.mbt.md`、`13.concurrency.mbt.md`、`14.performance.mbt.md`，附录位于 `appendix/` 目录。
+- 已有内容：`1.md`、`2.mbt.md`、`3.types.mbt.md`、`4.functions.mbt.md`、`5.variables.mbt.md`、`6.control-flow.mbt.md` 覆盖第 1–6 章。
+- 后续章节建议文件名：`7.advanced-functions.mbt.md`、`8.stdlib-data.mbt.md`、`9.modules-packages.mbt.md`、`10.testing-debug.mbt.md`、`11.build-deploy.mbt.md`、`12.concurrency.mbt.md`、`13.performance.mbt.md`、`14.extra.mbt.md`（预留）。
